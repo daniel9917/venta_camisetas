@@ -1,11 +1,10 @@
 package com.proyecto.springboot.form.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "rol")
-public class Rol {
+@Table(name = "forma_pago")
+public class FormaPago {
     @Id
     @Column(name = "id")
     private Long id;
@@ -13,8 +12,8 @@ public class Rol {
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "fecha_registro")
-    private Date fechaRegistro;
+    @Column(name = "impuesto")
+    private double impuesto;
 
     @Column(name = "descripcion")
     private String descripcion;
@@ -35,12 +34,12 @@ public class Rol {
         this.nombre = nombre;
     }
 
-    public Date getFechaRegistro() {
-        return this.fechaRegistro;
+    public double getImpuesto() {
+        return this.impuesto;
     }
 
-    public void setFechaRegistro(Date fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+    public void setImpuesto(double impuesto) {
+        this.impuesto = impuesto;
     }
 
     public String getDescripcion() {

@@ -1,69 +1,75 @@
 package com.proyecto.springboot.form.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
-import javax.persistence.Entity;
-
 @Entity
+@Table(name = "usuario")
 public class Usuario {
-	
-	private int id;
-	private Date fecha_registro;
-	private String nombre;
-	private String descripcion;
-	private int persona_id;
-	private int rol_id;
-	
-	public Usuario() {
+    @Id
+    @Column(name = "id")
+    private Long id;
 
-	}
+    @Column(name = "fecha_registro")
+    private Date fechaRegistro;
 
-	public int getId() {
-		return id;
-	}
+    @Column(name = "nombre")
+    private String nombre;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    @Column(name = "descripcion")
+    private String descripcion;
 
-	public Date getFecha_registro() {
-		return fecha_registro;
-	}
+    @Column(name = "fk_persona")
+    private Long fkPersona;
 
-	public void setFecha_registro(Date fecha_registro) {
-		this.fecha_registro = fecha_registro;
-	}
+    @Column(name = "fk_rol")
+    private Long fkRol;
 
-	public String getNombre() {
-		return nombre;
-	}
+    public Long getId() {
+        return this.id;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getDescripcion() {
-		return descripcion;
-	}
+    public Date getFechaRegistro() {
+        return this.fechaRegistro;
+    }
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
+    public void setFechaRegistro(Date fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
 
-	public int getPersona_id() {
-		return persona_id;
-	}
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public void setPersona_id(int persona_id) {
-		this.persona_id = persona_id;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public int getRol_id() {
-		return rol_id;
-	}
+    public String getDescripcion() {
+        return this.descripcion;
+    }
 
-	public void setRol_id(int rol_id) {
-		this.rol_id = rol_id;
-	}	
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
+    public Long getFkPersona() {
+        return this.fkPersona;
+    }
+
+    public void setFkPersona(Long fkPersona) {
+        this.fkPersona = fkPersona;
+    }
+
+    public Long getFkRol() {
+        return this.fkRol;
+    }
+
+    public void setFkRol(Long fkRol) {
+        this.fkRol = fkRol;
+    }
 }

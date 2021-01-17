@@ -1,74 +1,75 @@
 package com.proyecto.springboot.form.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
-import javax.persistence.Entity;
-
 @Entity
+@Table(name = "persona")
 public class Persona {
-	
-	private int id;
-	private String nombre;
-	private String apellido;
-	private Date fecha_nacimiento;
-	private String email;
-	private Date fecha_registro;
-	
-	public Persona() {
+    @Id
+    @Column(name = "id")
+    private Long id;
 
-	}
+    @Column(name = "nombre_completo")
+    private String nombreCompleto;
 
-	public int getId() {
-		return id;
-	}
+    @Column(name = "apellido_completo")
+    private String apellidoCompleto;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    @Column(name = "fecha_nacimiento")
+    private java.sql.Date fechaNacimiento;
 
-	public String getNombre() {
-		return nombre;
-	}
+    @Column(name = "email")
+    private String email;
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    @Column(name = "fecha_registro")
+    private Date fechaRegistro;
 
-	public String getApellido() {
-		return apellido;
-	}
+    public Long getId() {
+        return this.id;
+    }
 
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Date getFecha_nacimiento() {
-		return fecha_nacimiento;
-	}
+    public String getNombreCompleto() {
+        return this.nombreCompleto;
+    }
 
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
-	}
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getApellidoCompleto() {
+        return this.apellidoCompleto;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setApellidoCompleto(String apellidoCompleto) {
+        this.apellidoCompleto = apellidoCompleto;
+    }
 
-	public Date getFecha_registro() {
-		return fecha_registro;
-	}
+    public java.sql.Date getFechaNacimiento() {
+        return this.fechaNacimiento;
+    }
 
-	public void setFecha_registro(Date fecha_registro) {
-		this.fecha_registro = fecha_registro;
-	}
-	
-	
-	
-	
-	
+    public void setFechaNacimiento(java.sql.Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
 
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getFechaRegistro() {
+        return this.fechaRegistro;
+    }
+
+    public void setFechaRegistro(Date fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
 }

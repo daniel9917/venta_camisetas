@@ -1,62 +1,64 @@
 package com.proyecto.springboot.form.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
-import javax.persistence.Entity;
-
 @Entity
+@Table(name = "talla")
 public class Talla {
-	
-	private int ID;
-	private Date fecha_registro;
-	private String nombre;
-	private int representacion_numerica;
-	private boolean habilitado;
-	
-	public Talla() {
-		
-	}
+    @Id
+    @Column(name = "id")
+    private Long id;
 
-	public int getID() {
-		return ID;
-	}
+    @Column(name = "fecha_registro")
+    private Date fechaRegistro;
 
-	public void setID(int iD) {
-		ID = iD;
-	}
+    @Column(name = "nombre")
+    private String nombre;
 
-	public Date getFecha_registro() {
-		return fecha_registro;
-	}
+    @Column(name = "representacion_numerica")
+    private int representacionNumerica;
 
-	public void setFecha_registro(Date fecha_registro) {
-		this.fecha_registro = fecha_registro;
-	}
+    @Column(name = "habilitado")
+    private Boolean habilitado;
 
-	public String getNombre() {
-		return nombre;
-	}
+    public Long getId() {
+        return this.id;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public int getRepresentacion_numerica() {
-		return representacion_numerica;
-	}
+    public Date getFechaRegistro() {
+        return this.fechaRegistro;
+    }
 
-	public void setRepresentacion_numerica(int representacion_numerica) {
-		this.representacion_numerica = representacion_numerica;
-	}
+    public void setFechaRegistro(Date fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
 
-	public boolean isHabilitado() {
-		return habilitado;
-	}
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public void setHabilitado(boolean habilitado) {
-		this.habilitado = habilitado;
-	}
-	
-	
-	
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getRepresentacionNumerica() {
+        return this.representacionNumerica;
+    }
+
+    public void setRepresentacionNumerica(int representacionNumerica) {
+        this.representacionNumerica = representacionNumerica;
+    }
+
+    public Boolean getHabilitado() {
+        return this.habilitado;
+    }
+
+    public void setHabilitado(Boolean habilitado) {
+        this.habilitado = habilitado;
+    }
 }

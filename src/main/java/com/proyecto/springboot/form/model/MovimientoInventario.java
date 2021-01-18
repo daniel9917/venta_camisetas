@@ -1,10 +1,14 @@
 package com.proyecto.springboot.form.model;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Data
 @Entity
 @Table(name = "movimiento_inventario")
-public class MovimientoInventario {
+public class MovimientoInventario implements Serializable {
     @Id
     @Column(name = "id")
     private Long id;
@@ -16,28 +20,4 @@ public class MovimientoInventario {
     @Id
     @Column(name = "fk_movimiento_sucesor")
     private Long fkMovimientoSucesor;
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getFkMovimientoPredecesor() {
-        return this.fkMovimientoPredecesor;
-    }
-
-    public void setFkMovimientoPredecesor(Long fkMovimientoPredecesor) {
-        this.fkMovimientoPredecesor = fkMovimientoPredecesor;
-    }
-
-    public Long getFkMovimientoSucesor() {
-        return this.fkMovimientoSucesor;
-    }
-
-    public void setFkMovimientoSucesor(Long fkMovimientoSucesor) {
-        this.fkMovimientoSucesor = fkMovimientoSucesor;
-    }
 }

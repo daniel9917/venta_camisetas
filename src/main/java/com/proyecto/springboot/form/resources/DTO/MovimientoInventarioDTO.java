@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class MovimientoInventarioDTO {
-    private Long id;
+    private int id;
     private Long fkMovimientoSucesor;
     private Long fkMovimientoPredecesor;
 }

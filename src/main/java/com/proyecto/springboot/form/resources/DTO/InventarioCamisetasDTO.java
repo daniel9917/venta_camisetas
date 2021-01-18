@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class InventarioCamisetasDTO {
-    private Long id;
+    private int id;
     private java.sql.Date fechaRegistro;
     private Long idCamiseta;
     private Long idEstado;

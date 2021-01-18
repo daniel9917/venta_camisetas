@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class TallaDTO {
-    private Long id;
+    private int id;
     private Date fechaRegistro;
     private Boolean habilitado;
     private String nombre;

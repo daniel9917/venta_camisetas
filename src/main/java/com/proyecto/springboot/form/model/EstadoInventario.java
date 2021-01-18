@@ -11,7 +11,7 @@ public class EstadoInventario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Column(name = "nombre")
     private String nombre;

@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class CamisetaDTO {
-    private Long id;
+    private int id;
     private String descripcion;
     private Date fechaRegistro;
     private Long fkEstampado;

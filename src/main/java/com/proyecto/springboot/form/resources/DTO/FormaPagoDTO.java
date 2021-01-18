@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class FormaPagoDTO {
-    private Long id;
+    private int id;
     private String descripcion;
     private double impuesto;
     private String nombre;

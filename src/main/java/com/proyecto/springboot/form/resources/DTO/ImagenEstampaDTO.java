@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class ImagenEstampaDTO {
-    private Long id;
+    private int id;
     private Long fkEstampado;
     private String rutaGardada;
 }

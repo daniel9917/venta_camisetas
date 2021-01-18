@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class TemaEstampadoDTO {
-    private Long id;
+    private int id;
     private String nombre;
 }

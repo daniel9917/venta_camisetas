@@ -13,7 +13,7 @@ public class MovimientoInventario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Id
     @Column(name = "fk_movimiento_predecesor")

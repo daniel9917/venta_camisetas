@@ -15,7 +15,7 @@ public class Estampado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Column(name = "descripcion")
     private String descripcion;

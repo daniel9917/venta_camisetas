@@ -6,8 +6,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,9 +20,10 @@ import java.util.List;
  * @author juancsr
  */
 @RestController
-@RequestMapping(name = "/api/camiseta")
-@Api(tags = "camiseta")
+@RequestMapping("/camiseta")
+@Api("camiseta")
 public class CamisetaResource {
+
     private final CamisetaService camisetaService;
 
     public CamisetaResource(CamisetaService camisetaService) {
@@ -35,5 +38,15 @@ public class CamisetaResource {
     })
     public ResponseEntity<List<Camiseta>> findAll() {
         return ResponseEntity.ok(this.camisetaService.findAll());
+    }
+
+    @GetMapping("/{id}")
+    @ApiOperation(value = "get", notes = "get a record by its id")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "correct"),
+            @ApiResponse(code = 404, message = "error")
+    })
+    public ResponseEntity<Camiseta> findById(@PathVariable("id") int id) {
+        return new ResponseEntity<>(this.camisetaService.findById(id), HttpStatus.OK);
     }
 }

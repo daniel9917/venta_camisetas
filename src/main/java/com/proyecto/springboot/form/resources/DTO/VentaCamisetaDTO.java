@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class VentaCamisetaDTO {
-    private Long id;
+    private int id;
     private Date fechaRegistro;
     private Date fechaVenta;
     private Long fkCamiseta;

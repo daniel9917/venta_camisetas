@@ -1,7 +1,7 @@
 package com.proyecto.springboot.form.model;
 
 import lombok.Data;
-
+import java.util.Date;
 import javax.persistence.*;
 
 @Data
@@ -11,10 +11,10 @@ public class Camiseta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Column(name = "fecha_registro", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private java.sql.Date fechaRegistro;
+    private Date fechaRegistro;
 
     @Column(name = "nombre")
     private String nombre;
@@ -22,11 +22,13 @@ public class Camiseta {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "fk_talla")
-    private Long fkTalla;
+    @ManyToOne
+    @JoinColumn(name = "fk_talla")
+    private Talla fkTalla;
 
-    @Column(name = "fk_estampado")
-    private Long fkEstampado;
+    @ManyToOne
+    @JoinColumn(name = "fk_estampado")
+    private Estampado fkEstampado;
 
     @Column(name = "habilitada")
     private Boolean habilitada;

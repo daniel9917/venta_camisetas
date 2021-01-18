@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class EstampadoDTO {
-    private Long id;
+    private int id;
     private String descripcion;
     private Boolean disponibleVenta;
     private java.sql.Date fechaRegistro;

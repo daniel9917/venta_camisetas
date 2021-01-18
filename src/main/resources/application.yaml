@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://34.69.123.199:5433/postgres
+    url: jdbc:postgresql://34.69.123.199:5432/venta_camisetas
     username: postgres
     password: 2qqnkLvPyqtBIKlB
     driver-class-name: org.postgresql.Driver

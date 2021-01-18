@@ -1,0 +1,11 @@
+Para generar la configuración de swagger, cada método que haga referencia a un endpoint debe tener estas etiquetas
+
+@GetMapping
+@ApiOperation(value = "find all", notes = "get all rows without any condition")
+@ApiResponses(value = {
+        @ApiResponse(code = 200, message = "correct"),
+        @ApiResponse(code = 404, message = "error")
+})
+public ResponseEntity<List<Camiseta>> findAll() {
+    return ResponseEntity.ok(this.camisetaService.findAll());
+}

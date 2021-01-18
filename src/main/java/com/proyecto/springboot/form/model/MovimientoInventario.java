@@ -9,7 +9,9 @@ import java.io.Serializable;
 @Entity
 @Table(name = "movimiento_inventario")
 public class MovimientoInventario implements Serializable {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 

@@ -1,16 +1,20 @@
 package com.proyecto.springboot.form.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
+@Data
 @Entity
 @Table(name = "talla")
 public class Talla {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "fecha_registro")
+    @Column(name = "fecha_registro", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date fechaRegistro;
 
     @Column(name = "nombre")
@@ -21,44 +25,4 @@ public class Talla {
 
     @Column(name = "habilitado")
     private Boolean habilitado;
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getFechaRegistro() {
-        return this.fechaRegistro;
-    }
-
-    public void setFechaRegistro(Date fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
-    }
-
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getRepresentacionNumerica() {
-        return this.representacionNumerica;
-    }
-
-    public void setRepresentacionNumerica(int representacionNumerica) {
-        this.representacionNumerica = representacionNumerica;
-    }
-
-    public Boolean getHabilitado() {
-        return this.habilitado;
-    }
-
-    public void setHabilitado(Boolean habilitado) {
-        this.habilitado = habilitado;
-    }
 }

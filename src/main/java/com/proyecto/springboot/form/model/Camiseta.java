@@ -1,15 +1,19 @@
 package com.proyecto.springboot.form.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "camiseta")
 public class Camiseta {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "fecha_registro")
+    @Column(name = "fecha_registro", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private java.sql.Date fechaRegistro;
 
     @Column(name = "nombre")
@@ -26,60 +30,4 @@ public class Camiseta {
 
     @Column(name = "habilitada")
     private Boolean habilitada;
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public java.sql.Date getFechaRegistro() {
-        return this.fechaRegistro;
-    }
-
-    public void setFechaRegistro(java.sql.Date fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
-    }
-
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return this.descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Long getFkTalla() {
-        return this.fkTalla;
-    }
-
-    public void setFkTalla(Long fkTalla) {
-        this.fkTalla = fkTalla;
-    }
-
-    public Long getFkEstampado() {
-        return this.fkEstampado;
-    }
-
-    public void setFkEstampado(Long fkEstampado) {
-        this.fkEstampado = fkEstampado;
-    }
-
-    public Boolean getHabilitada() {
-        return this.habilitada;
-    }
-
-    public void setHabilitada(Boolean habilitada) {
-        this.habilitada = habilitada;
-    }
 }

@@ -1,11 +1,16 @@
 package com.proyecto.springboot.form.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "imagen_estampa")
 public class ImagenEstampa {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -14,28 +19,4 @@ public class ImagenEstampa {
 
     @Column(name = "fk_estampado")
     private Long fkEstampado;
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getRutaGardada() {
-        return this.rutaGardada;
-    }
-
-    public void setRutaGardada(String rutaGardada) {
-        this.rutaGardada = rutaGardada;
-    }
-
-    public Long getFkEstampado() {
-        return this.fkEstampado;
-    }
-
-    public void setFkEstampado(Long fkEstampado) {
-        this.fkEstampado = fkEstampado;
-    }
 }

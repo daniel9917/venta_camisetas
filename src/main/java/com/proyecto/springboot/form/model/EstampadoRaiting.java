@@ -1,11 +1,17 @@
 package com.proyecto.springboot.form.model;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+import java.util.Date;
+
+@Data
 @Entity
 @Table(name = "estampado_raiting")
 public class EstampadoRaiting {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -15,27 +21,6 @@ public class EstampadoRaiting {
     @Column(name = "id_estampado")
     private Long idEstampado;
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getVoto() {
-        return this.voto;
-    }
-
-    public void setVoto(int voto) {
-        this.voto = voto;
-    }
-
-    public Long getIdEstampado() {
-        return this.idEstampado;
-    }
-
-    public void setIdEstampado(Long idEstampado) {
-        this.idEstampado = idEstampado;
-    }
+    @Column(name = "fecha_registro", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Date fechaRegistro;
 }

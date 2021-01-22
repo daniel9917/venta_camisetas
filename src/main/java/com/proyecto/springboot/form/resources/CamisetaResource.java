@@ -54,11 +54,13 @@ public class CamisetaResource {
     @PostMapping
     @ApiOperation(value = "post", notes = "insert a new record")
     @ApiResponses(value = {
-        @ApiResponse(code = 202, message = "created")
+        @ApiResponse(code = 202, message = "created"),
         @ApiResponse(code = 404, message = "error")
     })
     public ResponseEntity<Camiseta> create() {
         Camiseta camiseta = new Camiseta();
         return new ResponseEntity<>(this.camisetaService.create(camiseta), HttpStatus.OK);
     }
+    
+    
 }

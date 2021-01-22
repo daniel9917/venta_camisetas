@@ -65,7 +65,7 @@ public class UsuarioResource {
 	}
 	
     
-    @PostMapping
+    @PostMapping("/createestamapa")
     @ApiOperation(value = "create estampado", notes = "creates a single register in table Estampado")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "correct"),

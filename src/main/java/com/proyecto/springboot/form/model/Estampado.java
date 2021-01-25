@@ -21,11 +21,7 @@ public class Estampado {
     
 
     public Estampado(String nombre, String descripcion, Date fechaRegistro, Long idTema, Long idUsuario) {
-<<<<<<< HEAD
-    	
-=======
-		
->>>>>>> 5e4596f9061ae82f202b6ccaf820705a17d77fcf
+
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.fechaRegistro = fechaRegistro;
@@ -38,11 +34,8 @@ public class Estampado {
     @Column(name = "id")
     @Getter
     @Setter
-<<<<<<< HEAD
-    private Long id;
-=======
     private int id;
->>>>>>> 5e4596f9061ae82f202b6ccaf820705a17d77fcf
+
 
     @Column(name = "descripcion")
     @Getter
@@ -77,11 +70,9 @@ public class Estampado {
 		this.nombre = nombre;
 	}
 
-<<<<<<< HEAD
-	public Long getId() {
-=======
+
 	public int getId() {
->>>>>>> 5e4596f9061ae82f202b6ccaf820705a17d77fcf
+
 		return id;
 	}
 

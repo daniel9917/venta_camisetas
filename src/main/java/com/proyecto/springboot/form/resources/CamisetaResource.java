@@ -40,6 +40,8 @@ public class CamisetaResource {
     public ResponseEntity<List<Camiseta>> findAll() {
         return ResponseEntity.ok(this.camisetaService.findAll());
     }
+    
+    
 
     @GetMapping("/{id}")
     @ApiOperation(value = "get", notes = "get a record by its id")
@@ -51,7 +53,7 @@ public class CamisetaResource {
         return new ResponseEntity<>(this.camisetaService.findById(id), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/camiseta")
     @ApiOperation(value = "post", notes = "insert a new record")
     @ApiResponses(value = {
         @ApiResponse(code = 202, message = "created"),
@@ -60,7 +62,9 @@ public class CamisetaResource {
     public ResponseEntity<Camiseta> create() {
         Camiseta camiseta = new Camiseta();
         return new ResponseEntity<>(this.camisetaService.create(camiseta), HttpStatus.OK);
+        
     }
+
     
     
 }

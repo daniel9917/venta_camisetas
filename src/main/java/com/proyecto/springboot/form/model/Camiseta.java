@@ -32,4 +32,62 @@ public class Camiseta {
 
     @Column(name = "habilitada")
     private Boolean habilitada;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Date getFechaRegistro() {
+		return fechaRegistro;
+	}
+
+	public void setFechaRegistro(Date fechaRegistro) {
+		this.fechaRegistro = fechaRegistro;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Talla getFkTalla() {
+		return fkTalla;
+	}
+
+	public void setFkTalla(Talla fkTalla) {
+		this.fkTalla = fkTalla;
+	}
+
+	public Estampado getFkEstampado() {
+		return fkEstampado;
+	}
+
+	public void setFkEstampado(Estampado fkEstampado) {
+		this.fkEstampado = fkEstampado;
+	}
+
+	public Boolean getHabilitada() {
+		return habilitada;
+	}
+
+	public void setHabilitada(Boolean habilitada) {
+		this.habilitada = habilitada;
+	}
+    
+    
 }

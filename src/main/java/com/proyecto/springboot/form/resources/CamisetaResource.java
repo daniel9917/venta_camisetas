@@ -61,4 +61,6 @@ public class CamisetaResource {
         Camiseta camiseta = new Camiseta();
         return new ResponseEntity<>(this.camisetaService.create(camiseta), HttpStatus.OK);
     }
+    
+    
 }

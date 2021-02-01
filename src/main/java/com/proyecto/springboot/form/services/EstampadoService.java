@@ -93,68 +93,68 @@ public class EstampadoService {
      * So if topic is selected, it will sort the records to groups
      * with the same topic
      */
-	public List<Estampado> getByFilter(int filter){
-		List<Estampado> records = this.findAll();
-		int longitud = records.size();		
-		
-		switch (filter) {
-			case 1:
-				//Insert code to filer by popularity
-			break;
-			case 2:
-				//Insert code to filter by rating			
-			break;
-			case 3:
-				//code to filter by author
-				for (int i = 0; i < longitud; i++) {
-					
-					if (i == longitud - 1)
-						break;
-					for (int j = i + 1; j < longitud; j++) {
-						if (j == longitud - 1)
-							break;
-						
-						if (records.get(i).getIdUsuario() == records.get(i + 1).getIdUsuario() ) {
-							break;
-						}
-						else if (records.get(i).getIdUsuario() == records.get(j).getIdUsuario() ) {
-							Estampado temp = records.get(i + 1);
-							records.set(i + 1, records.get(j));
-							records.set(j, temp);
-							
-						}
-						
-					}
-				}
-			return records;
-			case 4:
-				//code to filter by topic
-				for (int i = 0; i < longitud; i++) {
-					
-					if (i == longitud - 1)
-						break;
-					for (int j = i + 1; j < longitud; j++) {
-						if (j == longitud - 1)
-							break;
-						
-						if (records.get(i).getIdTema() == records.get(i + 1).getIdTema()) {
-							break;
-						}
-						else if (records.get(i).getIdTema() == records.get(j).getIdTema() ) {
-							Estampado temp = records.get(i + 1);
-							records.set(i + 1, records.get(j));
-							records.set(j, temp);
-							
-						}
-						
-					}
-				}
-			return records;
-			
-		}
-		return records;	
-			
-		
-	}
-	
+//	public List<Estampado> getByFilter(int filter){
+//		List<Estampado> records = this.findAll();
+//		int longitud = records.size();		
+//		
+//		switch (filter) {
+//			case 1:
+//				//Insert code to filer by popularity
+//			break;
+//			case 2:
+//				//Insert code to filter by rating			
+//			break;
+//			case 3:
+//				//code to filter by author
+//				for (int i = 0; i < longitud; i++) {
+//					
+//					if (i == longitud - 1)
+//						break;
+//					for (int j = i + 1; j < longitud; j++) {
+//						if (j == longitud - 1)
+//							break;
+//						
+//						if (records.get(i).getIdUsuario() == records.get(i + 1).getIdUsuario() ) {
+//							break;
+//						}
+//						else if (records.get(i).getIdUsuario() == records.get(j).getIdUsuario() ) {
+//							Estampado temp = records.get(i + 1);
+//							records.set(i + 1, records.get(j));
+//							records.set(j, temp);
+//							
+//						}
+//						
+//					}
+//				}
+//			return records;
+//			case 4:
+//				//code to filter by topic
+//				for (int i = 0; i < longitud; i++) {
+//					
+//					if (i == longitud - 1)
+//						break;
+//					for (int j = i + 1; j < longitud; j++) {
+//						if (j == longitud - 1)
+//							break;
+//						
+//						if (records.get(i).getIdTema() == records.get(i + 1).getIdTema()) {
+//							break;
+//						}
+//						else if (records.get(i).getIdTema() == records.get(j).getIdTema() ) {
+//							Estampado temp = records.get(i + 1);
+//							records.set(i + 1, records.get(j));
+//							records.set(j, temp);
+//							
+//						}
+//						
+//					}
+//				}
+//			return records;
+//			
+//		}
+//		return records;	
+//			
+//		
+//	}
+//	
 }

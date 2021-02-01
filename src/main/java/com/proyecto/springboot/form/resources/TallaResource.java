@@ -51,7 +51,7 @@ public class TallaResource {
     }
     
     
-    @PostMapping
+    @PostMapping("/create")
     @ApiOperation(value = "create", notes = "creates a single register")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "correct"),
@@ -61,6 +61,19 @@ public class TallaResource {
     	return ResponseEntity.ok(this.tallaService.create(talla));
     	
     }
+    
+    
+    @PostMapping("/createtest")
+    @ApiOperation(value = "testcreate", notes = "creates a single register")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "correct"),
+            @ApiResponse(code = 404, message = "error")
+    })
+    public ResponseEntity<String> create (String test){
+    	return ResponseEntity.ok("Test satisfactorio "+test);    	
+    }
+    
+    
 	
 
 }

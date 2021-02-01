@@ -53,7 +53,7 @@ public class CamisetaResource {
         return new ResponseEntity<>(this.camisetaService.findById(id), HttpStatus.OK);
     }
 
-    @PostMapping("/camiseta")
+    @PostMapping("/create")
     @ApiOperation(value = "post", notes = "insert a new record")
     @ApiResponses(value = {
         @ApiResponse(code = 202, message = "created"),

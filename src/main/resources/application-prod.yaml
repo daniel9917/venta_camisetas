@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://34.69.123.199:5432/venta_camisetas
-    username: postgres
-    password: 2qqnkLvPyqtBIKlB
+    url: jdbc:postgresql://ec2-107-22-14-60.compute-1.amazonaws.com:5432/d7urtjnp1fa1ba
+    username: pkmjudipcolofw
+    password: 90c6de00eb6711adbf8f6afbbdb0e7c86a5686808bf469f53282e2bb1b4a7b5f
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:

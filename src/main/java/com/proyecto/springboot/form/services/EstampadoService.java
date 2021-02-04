@@ -13,44 +13,39 @@ import com.proyecto.springboot.form.repository.EstampadoRepository;
 public class EstampadoService {
 	
 	
-	private EstampadoRepository estampadoResource;
-	
+	private EstampadoRepository estampadoRepository;
 
-	public EstampadoService() {
-
-	}
-
-	public EstampadoService(EstampadoRepository estampadoResource) {		
-		this.estampadoResource = estampadoResource;
+	public EstampadoService(EstampadoRepository estampadoRepository) {
+		this.estampadoRepository = estampadoRepository;
 	}
 	
     /**
      * save record
-     * @param Estampado stamp model object
+     * @param stamp model object
      * @return
      */
 	@Transactional
 	public Estampado create(Estampado stamp) {
-		return this.estampadoResource.save(stamp); 
+		return this.estampadoRepository.save(stamp);
 	}
 	
     /**
      * update record
-     * @param Estampado stamp model object
+     * @param stamp model object
      * @return
      */
     @Transactional
 	public Estampado update(Estampado stamp) {
-		return this.estampadoResource.save(stamp); 
+		return this.estampadoRepository.save(stamp);
 	}
 	
     /**
      * delete record
-     * @param Estampado stamp model object
+     * @param stamp model object
      */
 	@Transactional
 	public void delete(Estampado stamp) {
-		this.estampadoResource.delete(stamp);; 
+		this.estampadoRepository.delete(stamp);;
 	}
 	
 	
@@ -60,7 +55,7 @@ public class EstampadoService {
 	 *@return 
 	 */
 	public Estampado findById(int id) {
-		return this.estampadoResource.findById(id).get(); 
+		return this.estampadoRepository.findById(id).get();
 	}	
 	
 	/**
@@ -69,16 +64,15 @@ public class EstampadoService {
 	 *@return 
 	 */
 	public List<Estampado> findByIdUsuario(Long id) {
-		return this.estampadoResource.findByIdUsuario(id);
+		return this.estampadoRepository.findByIdUsuario(id);
 	}
 	
 	/**
 	 *gets all records from Estampado table
-	 *@param id row id
 	 *@return 
 	 */	
 	public List<Estampado> findAll() {
-		return this.estampadoResource.findAll(); 
+		return this.estampadoRepository.findAll();
 	}
 	
     /**

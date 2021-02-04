@@ -13,29 +13,17 @@ import javax.persistence.*;
 @Table(name = "estampado")
 public class Estampado {
 
-    @Column(name = "nombre")
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	@Getter
+	@Setter
+	private int id;
+
+	@Column(name = "nombre")
     @Getter
     @Setter
     private String nombre;
-    
-    
-
-    public Estampado(String nombre, String descripcion, Date fechaRegistro, Long idTema, Long idUsuario) {
-
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.fechaRegistro = fechaRegistro;
-		this.idTema = idTema;
-		this.idUsuario = idUsuario;
-	}
-
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    @Getter
-    @Setter
-    private int id;
-
 
     @Column(name = "descripcion")
     @Getter
@@ -61,6 +49,17 @@ public class Estampado {
     @Getter
     @Setter
     private Long idUsuario;
+
+	public Estampado() { }
+
+	public Estampado(String nombre, String descripcion, Date fechaRegistro, Long idTema, Long idUsuario) {
+
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.fechaRegistro = fechaRegistro;
+		this.idTema = idTema;
+		this.idUsuario = idUsuario;
+	}
 
 	public String getNombre() {
 		return nombre;

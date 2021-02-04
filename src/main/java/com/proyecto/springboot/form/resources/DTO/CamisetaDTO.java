@@ -1,15 +1,20 @@
 package com.proyecto.springboot.form.resources.DTO;
 
-import java.sql.Date;
+import com.proyecto.springboot.form.model.Camiseta;
+import com.proyecto.springboot.form.model.Estampado;
+import com.proyecto.springboot.form.model.Talla;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.util.Date;
+
 @Data
-public class CamisetaDTO {
+public class CamisetaDTO implements Serializable {
     private int id;
-    private String descripcion;
-    private Date fechaRegistro;
-    private Long fkEstampado;
-    private Long fkTalla;
-    private Boolean habilitada;
+    private Date fechaRegistro = new Date();
     private String nombre;
+    private String descripcion;
+    private Talla fkTalla;
+    private Estampado fkEstampado;
+    private Boolean habilitada;
 }
